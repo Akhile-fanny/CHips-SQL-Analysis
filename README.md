@@ -1,4 +1,4 @@
-# CHips-SQL-Analysis
+# Chips-SQL-Analysis
 
 Main Task
 

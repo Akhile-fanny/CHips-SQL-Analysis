@@ -288,27 +288,6 @@ GROUP BY ProductName, Pack_size
 ORDER BY  2 DESC
 
 
-
-
-
-
----- PRODUCT NAME BY PACK SIZE AND NUMBER OF ORDER
---SELECT DISTINCT CONCAT(ProductName, ' ', '-',' ', Pack_size) AS Product_name_and_PackSize,
---		COUNT(Tnx_ID) AS Number_of_order
---FROM   TEMP_Transaction
---GROUP BY ProductName,  Pack_size
---ORDER BY 2 DESC
-
--- PACK SIZE BY TOTAL SALES
---SELECT DISTINCT pack_size,	
---		ROUND(SUM(Total_sales), 0) AS Total_sales
---FROM   TEMP_Transaction
---GROUP BY   total_sales, pack_size						
---ORDER BY 2 desc
-
---SELECT DISTINCT Pack_size
---FROM   TEMP_Transaction
-
 --PRODUCT AND PACK SIZE BY TOTAL SALES
 
 SELECT DISTINCT CONCAT(ProductName, ' ', '-',' ', Pack_size) AS Product_name_and_PackSize,
@@ -577,45 +556,3 @@ FROM TEMP_Transaction
 WHERE  DATE BETWEEN '2019-02-01' AND'2019-04-30' AND Store_No = 165
 GROUP BY  DATENAME(MONTH, Date)
 ORDER BY 1 
-
-
-
-
-
-
-
-
-
-
-
---SELECT  DATENAME(MONTH, Date) AS Month, ROUND(SUM(Total_sales),0) AS Revenue FROM TEMP_Transaction
---WHERE  DATE BETWEEN '2019-02-01' AND'2019-04-30' AND Store_No = 88
---GROUP BY  DATENAME(MONTH, Date)
---ORDER BY 1 
-
------- MONTHLY NO OF CUSTOMERS FOR STORE 88
---SELECT   DATENAME(MONTH, Date) AS Month, COUNT(DISTINCT LYLTY_CARD_NBR) AS NO_of_customer 
---FROM TEMP_Transaction
---WHERE  DATE BETWEEN '2019-02-01' AND'2019-04-30' AND Store_No = 88
---GROUP BY  DATENAME(MONTH, Date)
---ORDER BY 1 
-
------- MONTHLY NO OF TRANSACTIONS FOR STORE 88
---SELECT   DATENAME(MONTH, Date) AS Month, COUNT( Tnx_ID)  AS NO_of_Transactions 
---FROM TEMP_Transaction
---WHERE  DATE BETWEEN '2019-02-01' AND'2019-04-30' AND Store_No = 88
---GROUP BY  DATENAME(MONTH, Date)
---ORDER BY 1 
-
-
-
-
-
-
-
---SELECT ROUND(SUM(Total_sales),0) AS Revenue FROM TEMP_Transaction
---WHERE  DATE BETWEEN '2019-02-01' AND'2019-04-30' AND Store_No = 88
-
-SELECT TOP 2 * FROM TEMP_Transaction
-
-
